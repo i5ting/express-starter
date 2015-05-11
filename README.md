@@ -18,6 +18,11 @@
 - add multer
 - plain post
 - add queue（https://github.com/Automattic/kue）
+- add cors
+- add is_js
+- add log4js
+- add require-directory
+- add bcrypt
 
 ## pm2 tips
 
