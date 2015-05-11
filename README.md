@@ -8,14 +8,11 @@
 - use bluebird for promise/A+ 
 - use mocha for test
 - add startmongodb.sh && start.sh
+- add pm2 for deploy
+- use supervisor for live reload
 
 
-todo
-
-- add pm2 
-
-
-## pm2
+## pm2 tips
 
 
 启动项目
