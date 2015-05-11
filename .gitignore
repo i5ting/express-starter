@@ -1,4 +1,5 @@
 node_modules
+*.log
 public/upload/*
 public/html/*
 npm-debug.log
