@@ -12,6 +12,13 @@
 - use supervisor for live reload
 
 
+## todo
+
+- add mongodb session store
+- add multer
+- plain post
+- add queue（https://github.com/Automattic/kue）
+
 ## pm2 tips
 
 
