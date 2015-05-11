@@ -1,0 +1,5 @@
+node_modules
+public/upload/*
+public/html/*
+npm-debug.log
+tmp/**
