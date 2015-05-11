@@ -13,3 +13,23 @@
 todo
 
 - add pm2 
+
+
+## pm2
+
+
+启动项目
+
+    sudo pm2 start app.js -i max --name 'express-starter'
+
+
+查看状态
+
+    sudo pm2 status
+
+
+停止所有
+
+    sudo pm2 stop all
+    
+    
