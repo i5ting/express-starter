@@ -12,20 +12,17 @@
 - use supervisor for live reload
 - add multer（2015.5.12 07：09）
 - plain post（2015.5.12 07：09）
+- add cors（2015.5.12 07：19）
 
 ## todo
 
 - add mongodb session store
 - add queue（https://github.com/Automattic/kue）
-- add cors
 - add is_js
 - add log4js
 - add require-directory
 - add bcrypt
 - add ueditor
-
-
-
 
 ## 目录说明
 
@@ -111,3 +108,11 @@ curl -d "{"a":"1","b":"2","c":{"a":"1","b":"2"}}" http://127.0.0.1:3001/users/po
 ```
 
 更多见 https://github.com/i5ting/node-http
+
+
+### 支持跨域cors
+
+```
+// 支持跨域
+app.use(require('cors')());
+```

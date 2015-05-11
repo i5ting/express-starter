@@ -13,6 +13,9 @@ var users = require('./routes/users');
 
 var app = express();
 
+// 支持跨域
+app.use(require('cors')());
+
 // for raw data
 app.use(function(req, res, next){
   if (req.is('text/*')) {
