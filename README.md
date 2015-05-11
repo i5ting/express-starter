@@ -23,6 +23,7 @@
 - add log4js
 - add require-directory
 - add bcrypt
+- add ueditor
 
 ## pm2 tips
 
