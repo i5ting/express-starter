@@ -1,5 +1,6 @@
-# Express-Starter
+# Express Starter
 
+- use express 4.*
 - use jade
 - use mongoose
 - use config.json
@@ -9,3 +10,6 @@
 - add startmongodb.sh && start.sh
 
 
+todo
+
+- add pm2 
