@@ -116,3 +116,45 @@ curl -d "{"a":"1","b":"2","c":{"a":"1","b":"2"}}" http://127.0.0.1:3001/users/po
 // 支持跨域
 app.use(require('cors')());
 ```
+
+### session
+
+https://github.com/kcbanner/connect-mongo
+
+项目使用mongoose做操作mongodb的库，所以这里直接复用其连接即可
+
+见app.js里
+
+```
+var session      = require('express-session')
+var MongoStore   = require('connect-mongo')(session);
+var mongoose     = require('mongoose');
+
+....
+
+var half_hour = 3600000 / 2;
+
+app.use(session({
+  store: new MongoStore({ mongooseConnection: mongoose.connection }),
+  secret: 'gupjia.ng@me',
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+    secure: false,
+    maxAge: half_hour
+  }
+}));
+
+```
+
+### 安装mongoose经常会报错的解决方案
+
+问题在bson
+
+原因是mongoose依赖mongodb，mongodb里依赖mongodb-core，mongodb-core依赖bson
+
+解决方案
+
+    [sudo] npm install -g mongooseinstaller
+    mi
+    

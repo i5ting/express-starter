@@ -4,6 +4,8 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var session      = require('express-session')
+var MongoStore   = require('connect-mongo')(session);
+var mongoose     = require('mongoose');
 var bodyParser = require('body-parser')
 var multer       = require('multer');
 require('./db')
@@ -39,6 +41,19 @@ app.use(function(req, res, next) {
   req.server_path = path.join(__dirname, 'public');
   return next();
 });
+
+var half_hour = 3600000 / 2;
+
+app.use(session({
+  store: new MongoStore({ mongooseConnection: mongoose.connection }),
+  secret: 'gupjia.ng@me',
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+    secure: false,
+    maxAge: half_hour
+  }
+}));
 
 app.use(function(req, res, next) {
   req.model = require('./models');
