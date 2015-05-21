@@ -13,16 +13,17 @@
 - add multer（2015.5.12 07：09）
 - plain post（2015.5.12 07：09）
 - add cors（2015.5.12 07：19）
+- add mongodb session store
 
 ## todo
 
-- add mongodb session store
 - add queue（https://github.com/Automattic/kue）
 - add is_js
 - add log4js
 - add require-directory
 - add bcrypt
 - add ueditor
+- add req.flash（https://github.com/expressjs/flash）
 
 ## 目录说明
 
