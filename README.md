@@ -17,13 +17,13 @@
 
 ## todo
 
-- add queue（https://github.com/Automattic/kue）
+- add queue -> [https://github.com/Automattic/kue](https://github.com/Automattic/kue)
 - add is_js
-- add log4js
+- add log4js -> [https://github.com/nomiddlename/log4js-node](https://github.com/nomiddlename/log4js-node)
 - add require-directory
 - add bcrypt
 - add ueditor
-- add req.flash（https://github.com/expressjs/flash）
+- add req.flash -> [https://github.com/expressjs/flash](https://github.com/expressjs/flash)
 
 ## 目录说明
 
@@ -38,20 +38,23 @@
 
 ## pm2 tips
 
-
 启动项目
 
-    sudo pm2 start app.js -i max --name 'express-starter'
-
+```sh
+$sudo pm2 start app.js -i max --name 'express-starter'
+```
 
 查看状态
 
-    sudo pm2 status
-
+```sh
+$sudo pm2 status
+```
 
 停止所有
 
-    sudo pm2 stop all
+```sh
+$sudo pm2 stop all
+```
     
 ## 技术点
 
@@ -61,19 +64,16 @@ express 4 官方上传中间件
 
 https://github.com/expressjs/multer
 
-```
-var multer       = require('multer');
-
-
+```js
 var app = express();
+var multer = require('multer');
 
- 
 app.use(multer({ 
   dest: './uploads/',
   rename: function (fieldname, filename) {
     return filename.replace(/\W+/g, '-').toLowerCase() + Date.now()
   }
-}))
+}));
 ```
 
 ### plain post
@@ -86,7 +86,7 @@ app.use(multer({
 
 头2种express是内置处理的，第三种要自己处理
 
-```
+```js
 var app = express();
 
 app.use(function(req, res, next){
@@ -103,9 +103,9 @@ app.use(function(req, res, next){
 
 测试方法
 
-```
-echo -n 'post raw json'
-curl -d "{"a":"1","b":"2","c":{"a":"1","b":"2"}}" http://127.0.0.1:3001/users/post
+```sh
+$echo -n 'post raw json'
+$curl -d "{"a":"1","b":"2","c":{"a":"1","b":"2"}}" http://127.0.0.1:3001/users/post
 ```
 
 更多见 https://github.com/i5ting/node-http
@@ -113,7 +113,7 @@ curl -d "{"a":"1","b":"2","c":{"a":"1","b":"2"}}" http://127.0.0.1:3001/users/po
 
 ### 支持跨域cors
 
-```
+```js
 // 支持跨域
 app.use(require('cors')());
 ```
@@ -126,7 +126,7 @@ https://github.com/kcbanner/connect-mongo
 
 见app.js里
 
-```
+```js
 var session      = require('express-session')
 var MongoStore   = require('connect-mongo')(session);
 var mongoose     = require('mongoose');
@@ -145,7 +145,6 @@ app.use(session({
     maxAge: half_hour
   }
 }));
-
 ```
 
 ### 安装mongoose经常会报错的解决方案
@@ -156,6 +155,8 @@ app.use(session({
 
 解决方案
 
-    [sudo] npm install -g mongooseinstaller
-    mi
+```sh
+$sudo npm install -g mongooseinstaller
+$mi
+```
     
